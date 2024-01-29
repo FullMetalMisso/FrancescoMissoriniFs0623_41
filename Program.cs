@@ -17,8 +17,15 @@ namespace eserciziopomeridiano
             pinco.TellHowMuchTo18();
             Animal wolf = new Animal();
             wolf.Gratta();
-            Atleta 
+            Atleta pilota = new Atleta();
+            pilota.Corsa();
+            Dipendente lavoratore = new Dipendente();
+            Console.WriteLine( lavoratore.QuantoAllaPensione());
+            Veicolo golf = new Veicolo();
+            golf.Rottamazione(55);
+            golf.MyCar();
           
+
 
         }
     }
@@ -37,7 +44,7 @@ namespace eserciziopomeridiano
         {
             Height = Height + delta;
         }
-
+       
         public int HowMuchTo18()
         {
             return 18 - Age;
@@ -50,16 +57,58 @@ namespace eserciziopomeridiano
 
 
     }
-
     public class Animal
     {
-       public int NumeroZampe = 4;
-       public int Ferocia = 100 ;
+        public int NumeroZampe = 4;
+        public int Ferocia = 100;
         public string Comportamento = "Te mozzica";
-       
-        public void Gratta() 
+
+        public void Gratta()
         {
             Console.WriteLine("Incontri un lupo con" + " " + NumeroZampe + " " + "zampe" + " " + " e " + Comportamento);
         }
+    }
+
+    public class Atleta
+    {
+        public string Qualita = "velocitá";
+        public int VelocitáMax = 380;
+        public string Protezione = "Casco";
+
+        public void Corsa()
+        {
+            Console.WriteLine("Corre ad elevata" + " " + Qualita + " " + "raggiungendo i massimi di" + VelocitáMax + " " + " e " + " Indossando il " + " " + Protezione);
+        }
+    }
+
+    public class Dipendente
+    {
+        public int AnniPensione = 50;
+        public int NumeroAnniLavoro = 5;
+        public string Qualifica = "Senior";
+
+
+        public int QuantoAllaPensione()
+        {
+            return AnniPensione - NumeroAnniLavoro;
+        }
+    }
+
+
+    public class Veicolo
+    {
+        public int NumeroRuote = 4;
+        public int Immatricolazione= 1995;
+        public string Carburante = "Benzina";
+
+        public void MyCar()
+        {
+            Console.WriteLine("La mia auto va a " + " " + Carburante + " " + " e ha numero di ruote " + NumeroRuote + " " + Immatricolazione.ToString());
+        }
+        public void Rottamazione(int ban)
+        {
+            Immatricolazione = Immatricolazione + ban;
+        }
+       
     }
 }
